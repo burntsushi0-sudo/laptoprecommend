@@ -4,7 +4,7 @@ import nh3
 import time
 import random
 
-st.set_page_config(page_title="NEON JACKPOT CONFIGURATOR", page_icon="🎰", layout="wide")
+st.set_page_config(page_title="Laptop Jackpot", page_icon="🎰", layout="wide")
 
 st.markdown("""
     <style>
@@ -106,7 +106,7 @@ if not api_key:
 client = genai.Client(api_key=api_key)
 
 
-st.title("🎰 NEON HARDWARE JACKPOT")
+st.title("🎰 LAPTOP JACKPOT")
 st.write("CRITICAL LINK: [ ESTABLISHED ] // CURRENCY: [ INR ] // PULL LEVER TO SPIN CORES")
 st.markdown("---")
 
