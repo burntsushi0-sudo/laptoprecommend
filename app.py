@@ -152,7 +152,7 @@ if not api_key:
 client = genai.Client(api_key=api_key)
 
 
-st.title("🕹️ THE OASIS: RIG CONFIGURATOR")
+st.title("🕹️ THE OASIS: RIG SLOT MACHINE")
 st.write("PLAYER_STATUS: [ READY ] // LINK: [ ANORAK'S ALMANAC DECRYPTOR ] // MARKET: [ INR_REGION ]")
 st.markdown("---")
 
