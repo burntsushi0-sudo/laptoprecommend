@@ -163,7 +163,7 @@ with col1:
     max_price = st.number_input("COIN INVENTORY BUDGET (₹ INR)", min_value=25000, max_value=500000, value=80000, step=5000)
     usage_type = st.selectbox(
         "AVATAR CLASS & QUEST PROFILE",
-        ["Casual OASIS Browsing (Gunter Basic)", "Artifact Decryption & Coding (Tech-Gunter)", "Distracted Globe PvP & Streaming (Elite Gunter)", "OASIS World Building & 3D Render (GSS Architect)", "Haliday Journals Video Binging (Casual)"]
+        ["Computer Science Engneering Rig", "Electronics and Communication Rig", "Casual Rig(Browsing rig)", "Mechanical Engineering rig", "Gaming rig"]
     )
 
 with col2:
