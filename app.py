@@ -1,11 +1,7 @@
 import streamlit as st
 from google import genai
 import textwrap
-
-# 1. Fundamental Page Configuration & Advanced CSS Injection
 st.set_page_config(page_title="Laptop Recommender", page_icon="🖥️", layout="wide")
-
-# High-Level Visual Stylization Matrix
 st.markdown("""
     <style>
     /* Dark Background & Retro Glow */
@@ -78,26 +74,18 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
-
-# Secure API Authentication Check
 api_key = st.secrets.get("GEMINI_API_KEY")
 if not api_key:
     st.error("🔑 Access Denied: GEMINI_API_KEY Missing. Run SYSTEM_REBOOT.")
     st.stop()
 
 client = genai.Client(api_key=api_key)
-
-# 2. Main Terminal Header
-st.title("🖥️ AI PRECISION CONFIGURATOR (INDIA)")
+st.title("🖥️Laptop Recommender")
 st.write("SYS_STATUS: [ ONLINE ] // MARKET_DATA: [ INR ] // AI_MODEL: [ GEMINI-3.5-FLASH ]")
 st.write("Initializing secure hardware matching matrix...")
 st.markdown("---")
-
-# 3. Input Interface (Retro columns)
 col1, col2 = st.columns(2)
-
 with col1:
-    # Price Input Component (INR scaling, neon border)
     max_price = st.number_input(
         "MAX_BUDGET Target (in ₹ INR)", 
         min_value=25000, 
@@ -107,7 +95,7 @@ with col1:
         help="Input numeric parameter (INR)"
     )
     
-    # Usage Type Dropdown Selection
+    
     usage_type = st.selectbox(
         "OPERATIONAL_USAGE Profile",
         [
@@ -120,13 +108,13 @@ with col1:
     )
 
 with col2:
-    # Operating System Dropdown Choice
+    
     os_choice = st.selectbox(
         "TARGETED OS Environment",
         ["Windows 11 (Standard)", "macOS (Apple Ecosystem)", "Linux (Out-of-the-Box)", "ChromeOS (Cloud)", "No System Preference"]
     )
     
-    # Target RAM Slider Component
+    
     ram_target = st.select_slider(
         "MINIMUM_REQUIRED RAM (SYS_MEMORY)",
         options=["8GB", "16GB", "32GB", "64GB"],
@@ -135,10 +123,10 @@ with col2:
 
 st.markdown("---")
 
-# 4. The Cyber-Launch Command
+
 if st.button("🚀 GENERATE CONFIG SPECTRUM"):
     
-    # Constructing a structured prompt out of user parameters, enforcing INR
+    
     prompt = f"""
     You are an expert laptop hardware engineer and Indian consumer electronics market analyst.
     Act as an impartial AI advisor operating in a secure terminal. Recommend 3 current real-world laptop models Widely available in the Indian market that fit these exact parameters:
@@ -161,7 +149,7 @@ if st.button("🚀 GENERATE CONFIG SPECTRUM"):
     
     with st.spinner("🧠 Scanning neural market matrices for INR benchmarks..."):
         try:
-            # Using the fast, developer-tier Gemini 3.5 Flash model
+           
             response = client.models.generate_content(
                 model="gemini-3.5-flash",
                 contents=prompt
@@ -169,7 +157,7 @@ if st.button("🚀 GENERATE CONFIG SPECTRUM"):
             
             st.success("🤖 ANALYSIS_COMPLETE! Outputting Configuration Matrix:")
             
-            # Formats output text as standard console block
+            
             formatted_text = textwrap.indent(response.text, ' > ')
             st.code(formatted_text, language='text')
             
